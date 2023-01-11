@@ -1,0 +1,44 @@
+doctype html
+html(lang='en')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/javascripts/eventlistener.js', defer=true) 
+  body
+    
+    div(class='container')
+      
+      div(class='headerCon')
+        block header 
+          
+          div(class='main')
+            a(href="/catalog") 
+              img(class="mainLogo" src="/images/kiba.jpg", alt="")
+          div(class='header')
+            a(href="/catalog")
+              img(class="headerLogo" src="/images/labs.webp")
+      div(class='sidebarCon')
+        block sidebar
+          div(class='weaponCategory')
+            div
+              a(href='/catalog') H o m e
+            div
+              a(href='/catalog/assaultrifle') A s s a u l t - R i f l e s
+            div
+              a(href='/catalog/handgun') H a n d - G u n s
+            div
+              a(href='/catalog/sniperrifle') S n i p e r - R i f l e s
+            div
+              a(href='/catalog/marksmanrifle') M a r k s m a n - R i f l e s
+            div
+              a(href='/catalog/shotgun') S h o t g u n s
+            div
+              a(href='/catalog/smg') S u b m a c h i n e - G u n s
+
+      div(class='contentCon')
+        block content
+
+      

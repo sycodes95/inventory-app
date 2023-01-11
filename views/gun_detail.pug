@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  div(class='detailCon')
+    div(class='detailImg')
+      h1= title
+      h3= gun.category
+      div(class='detailImgCon')
+        img(src=gun.picture, alt="")
+    div(class="detailInfo")
+      
+      h1 $ #{Math.floor(gun.price)}
+
+      if(gun.stock > 0)
+        h1(class='inStock') In Stock
+      else 
+        h1(class='outOfStock') Out of stock
+
+      span Stock: #{gun.stock}
+      
+      if(gun.stock > 0)
+        form(method='POST' action='') 
+          input#id.form-control(type='hidden',name='id', required='true', value=gun._id )
+          button(class='purchaseButton' type='submit') Purchase
+      else 
+        form(method='POST' action='') 
+          input#id.form-control(type='hidden',name='id', required='true', value=gun._id )
+          button(class='soldOutButton' type='submit' ,disabled=true) Sold Out
+
+      

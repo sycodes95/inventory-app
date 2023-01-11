@@ -1,0 +1,23 @@
+extends layout
+
+block content
+
+  h1= title
+  p Welcome to 
+      em Weapons Database
+  h1 Overview
+
+  .databaseCon
+      each gun in gun_list
+          .gunCon(id=gun.id)
+              .gunPicture
+                  a(href=gun.url) 
+                      img(src=gun.picture)
+              .gunName
+                  =gun.name
+              .gunCategory
+                  =gun.category
+              .gunInfo
+                  span(class='gunPrice') Price: $#{Math.floor(gun.price)}
+                  span(class='gunStock') Stock: #{gun.stock}
+                  span(class='gunWeight') Weight: #{gun.weight}
