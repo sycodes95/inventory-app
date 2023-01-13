@@ -8,11 +8,11 @@ const mongoose = require('mongoose')
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const catalogRouter = require('./routes/catalog')
-
+require('dotenv').config()
 
 const app = express();
 // Mongo / Mongoose
-const mongoDB = "mongodb+srv://sycodes95:rockstar86@cluster0.ngi0p7w.mongodb.net/inventory-app?retryWrites=true&w=majority"
+const mongoDB = process.env.MONGO_URL
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
